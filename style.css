@@ -44,7 +44,6 @@ Set up mobile-first using default properties
 ==========================================
 */
 body {
-    background-color: #1b1b32;
     color: #f5f6f7;
     font-family: 'Lato', 'Fira Sans', 'Roboto Condensed', sans-serif;
     height: inherit;
@@ -74,16 +73,6 @@ h1 {
     letter-spacing: 3px;
     font-weight:600;
     margin-bottom: 0;
-}
-
-
-.logo {
-    grid-row: 1;
-    grid-column: 5;
-    width: 10vw;
-    max-width: 70px;
-    padding-top: 2rem;
-    display: none;
 }
 
 label {
@@ -128,10 +117,27 @@ input[type="reset"]:active {
 
 
 body {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
     display: grid;
     grid-template-columns: repeat(12, minmax(auto, 1fr));
     grid-template-rows: repeat(10, minmax(auto, 1fr));
     overflow-y: hidden;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 main {
@@ -139,13 +145,15 @@ main {
     grid-column: 2 / 12;
     box-shadow: 1px 1px 15px;
     border-radius: 5px;
+    color: #D9FFF5;
 }
 
-img {
-    width: 100%
+#t-image {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
 }
-
-
 
 
 /* 
@@ -156,19 +164,13 @@ Change appearance based on media size
 */
 
 @media all and (min-width: 720px) {
-
-    body {
-        background-image: url(images/altschool3.png);
-        background-size: cover;
-    }
     
     main {
         writing-mode: horizontal-tb;
         grid-row: 2 / 10;
         grid-column: 3 / 11;
         box-shadow: 1px 1px 12px;
-        color: #1b1b32;
-        background-color: #fff;
+        color: #D9FFF5;
     }
     input[type="submit"],
     input[type="reset"] {
